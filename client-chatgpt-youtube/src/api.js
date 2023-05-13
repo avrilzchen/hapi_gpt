@@ -1,4 +1,6 @@
 export const fetchResponse =  async(chat) => {
+    // console.log("chat")
+    // console.log(chat)
     try {
         // after depoloyment you should change the fetch URL below
         const response = await fetch('http://localhost:3080', { 
@@ -7,7 +9,8 @@ export const fetchResponse =  async(chat) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                message: chat.map((message)=> message.message).join(" \n ")
+                message: chat.map((message)=> message.message).join(" \n "),
+                hapi: chat
             })
         })
 
